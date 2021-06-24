@@ -1,9 +1,10 @@
 import React from 'react';
 import { TouchableOpacityProps } from 'react-native';
+import { RectButtonProps } from 'react-native-gesture-handler';
 import DiscordImg from '../../assets/discord.png';
 import { Container, Icon, IconWrapper, Title } from './styles';
 
-interface ButtonIconProps extends Omit<TouchableOpacityProps, 'style' | 'activeOpacity'> {
+interface ButtonIconProps extends Omit<RectButtonProps, 'style'> {
   title: string;
 }
 

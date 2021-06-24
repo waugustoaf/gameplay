@@ -1,18 +1,24 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Container, Content, Logo, Subtitle, Title } from './styles';
 import IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from '../../components/ButtonIcon';
+import { Container, Content, Logo, Subtitle, Title } from './styles';
 
 export const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
+  const handleSignIn = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <Container>
       <Logo source={IllustrationImg} resizeMode='stretch' />
 
       <Content>
         <Title>
-          Organize {'\n'}
-          suas jogatinas {'\n'}
-          facilmente
+          Conecte-se {'\n'}e organize suas{'\n'}
+          jogatinas
         </Title>
 
         <Subtitle>
@@ -20,7 +26,7 @@ export const SignIn: React.FC = () => {
           favoritos com seus amigos
         </Subtitle>
 
-        <ButtonIcon title='Entrar com discord' />
+        <ButtonIcon title='Entrar com discord' onPress={handleSignIn} />
       </Content>
     </Container>
   );

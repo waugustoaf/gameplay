@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${props => props.theme.colors.background};
   justify-content: center;
   align-items: center;
 `;
@@ -22,6 +21,8 @@ export const Title = styled.Text`
   text-align: center;
   font-size: 40px;
   margin-bottom: 16px;
+  line-height: 40px;
+  font-family: ${props => props.theme.fonts.title700};
 `;
 
 export const Subtitle = styled.Text`
@@ -29,4 +30,6 @@ export const Subtitle = styled.Text`
   font-size: 15px;
   text-align: center;
   margin-bottom: 64px;
+  font-family: ${props => props.theme.fonts.title500};
+  line-height: 25px;
 `;
