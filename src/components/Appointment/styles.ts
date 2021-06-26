@@ -10,8 +10,10 @@ export const Container = styled.View`
   align-self: center;
 `;
 
-export const Content = styled.View``;
-flex: 1;
+export const Content = styled.View`
+  flex: 1;
+`;
+
 export const Header = styled.View`
   width: 100%;
   flex-direction: row;
@@ -29,6 +31,7 @@ export const CategoryText = styled.Text`
   font-family: ${props => props.theme.fonts.title500};
   color: ${props => props.theme.colors.highlight};
   font-size: 13px;
+  margin-right: 24px;
 `;
 
 export const Footer = styled.View`

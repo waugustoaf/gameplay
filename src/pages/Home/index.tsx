@@ -8,9 +8,11 @@ import { ListDivider } from '../../components/ListDivider';
 import { Profile } from '../../components/Profile';
 import { Appointment as AppointmentDTO } from '../../dtos/Appointment';
 import { AppointmentList, Container, Content, Header } from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export const Home: React.FC = () => {
   const [category, setCategory] = useState('');
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -35,6 +37,10 @@ export const Home: React.FC = () => {
     [category],
   );
 
+  const handleGoToAppointmentDetails = (appointmentId: string) => {
+    navigation.navigate('AppointmentDetails', { appointmentId });
+  };
+
   return (
     <Container>
       <Header>
@@ -55,7 +61,12 @@ export const Home: React.FC = () => {
         <AppointmentList
           data={appointments}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => <Appointment data={item} />}
+          renderItem={({ item }) => (
+            <Appointment
+              data={item}
+              onPress={() => handleGoToAppointmentDetails(item.id)}
+            />
+          )}
           showsVerticalScrollIndicator={false}
           ItemSeparatorComponent={() => <ListDivider />}
         />

@@ -3,6 +3,6 @@ import { Container } from './styles';
 
 export const ListDivider: React.FC = () => {
   return (
-    <Container></Container>
+    <Container />
   );
 };
